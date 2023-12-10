@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-9.cx6dp2mhue1c.ap-northeast-2.rds.amazonaws.com:3306/cbthub
+    username: admin
+    password: 63814110
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
