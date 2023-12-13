@@ -4,6 +4,7 @@ package rimgosu.cbthub.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import rimgosu.cbthub.domain.item.Book;
 import rimgosu.cbthub.domain.item.Item;
 import rimgosu.cbthub.repository.ItemRepository;
 
@@ -30,4 +31,10 @@ public class ItemService {
         return itemRepository.findOne(itemId);
     }
 
+    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+        Item findItem = itemRepository.findOne(itemId);
+        findItem.setPrice(price);
+        findItem.setName(name);
+        findItem.setStockQuantity(stockQuantity);
+    }
 }

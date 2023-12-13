@@ -1,7 +1,6 @@
 package rimgosu.cbthub.service;
 
 import lombok.RequiredArgsConstructor;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rimgosu.cbthub.domain.Delivery;
@@ -12,6 +11,7 @@ import rimgosu.cbthub.domain.item.Item;
 import rimgosu.cbthub.repository.ItemRepository;
 import rimgosu.cbthub.repository.MemberRepository;
 import rimgosu.cbthub.repository.OrderRepository;
+import rimgosu.cbthub.repository.OrderSearch;
 
 import java.util.List;
 
@@ -64,8 +64,9 @@ public class OrderService {
     /**
      * 검색
      */
-    /*public List<Order> findOrders(OrderSearch orderSearch) {
-        return orderRepository.findAll(orderSearch);
-    }*/
+    //검색
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 
 }
